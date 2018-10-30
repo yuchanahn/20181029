@@ -4,45 +4,48 @@ using UnityEngine;
 
 public class pProperty
 {
-    public ReAct<float> _currentMeter       = new ReAct<float>();
-    public ReAct<float> _maxMeter           = new ReAct<float>();
-    public ReAct<float> _acceleration       = new ReAct<float>();
-    public ReAct<float> _diveTime           = new ReAct<float>();
-    public ReAct<float> _xSpeed             = new ReAct<float>();
-    public ReAct<float> _ySpeed             = new ReAct<float>();
-    public ReAct<float> _temperature        = new ReAct<float>();
-    public ReAct<int> _view                 = new ReAct<int>();
-    public ReAct<int> _wetsuit              = new ReAct<int>();
-    public ReAct<int> _weaponLv             = new ReAct<int>();
-    public ReAct<float> _stamina            = new ReAct<float>();
-    public ReAct<float> _staminaRecovery    = new ReAct<float>();
-    public ReAct<float> _maxStamina         = new ReAct<float>();
-    public ReAct<float> _oxygen             = new ReAct<float>();
-    public ReAct<float> _oxygenRecovery     = new ReAct<float>();
-    public ReAct<float> _maxOxygen          = new ReAct<float>();
-    public ReAct<int> _health               = new ReAct<int>();
-    public ReAct<int> _maxHealth            = new ReAct<int>();
+    public ReAct<float> currentMeter       = new ReAct<float>();
+    public ReAct<float> maxMeter           = new ReAct<float>();
+    public ReAct<float> acceleration       = new ReAct<float>();
+    public ReAct<float> maxAcceleration    = new ReAct<float>();
+    public ReAct<float> diveTime           = new ReAct<float>();
+    public ReAct<int>   xSpeed               = new ReAct<int>();
+    public ReAct<float> ySpeed             = new ReAct<float>();
+    public ReAct<float> maxYSpeed          = new ReAct<float>();
+    public ReAct<float> temperature        = new ReAct<float>();
+    public ReAct<int>   view                 = new ReAct<int>();
+    public ReAct<int>   wetsuit              = new ReAct<int>();
+    public ReAct<int>   weaponLv             = new ReAct<int>();
+    public ReAct<float> stamina            = new ReAct<float>();
+    public ReAct<float> staminaRecovery    = new ReAct<float>();
+    public ReAct<float> maxStamina         = new ReAct<float>();
+    public ReAct<float> oxygen             = new ReAct<float>();
+    public ReAct<float> oxygenRecovery     = new ReAct<float>();
+    public ReAct<float> maxOxygen          = new ReAct<float>();
+    public ReAct<int>   health               = new ReAct<int>();
+    public ReAct<int>   maxHealth            = new ReAct<int>();
 
-
-    void Init()
+    public void Init()
     {
-        _currentMeter.Value = 0;
-        _maxMeter.Value = 0;
-        _acceleration.Value = 1;
-        _diveTime.Value = 10f;
-        _xSpeed.Value = 1f;
-        _ySpeed.Value = 2f;
-        _temperature.Value = 36.5f;
-        _view.Value = 1;
-        _wetsuit.Value = 1;
-        _weaponLv.Value = 1;
-        _stamina.Value = 10f;
-        _staminaRecovery.Value = 1f;
-        _maxStamina.Value = 10f;
-        _oxygen.Value = 10f;
-        _oxygenRecovery.Value = 1f;
-        _maxOxygen.Value = 10f;
-        _health.Value = 10;
-        _maxHealth.Value = 10;
+        currentMeter.       Init(0);
+        maxMeter.           Init(0);
+        acceleration.       Init(.05f);
+        maxAcceleration.    Init(.5f);
+        diveTime.           Init(10f);
+        xSpeed.             Init(1);
+        ySpeed.             Init(0f);
+        maxYSpeed.          Init(5f);
+        temperature.        Init(36.5f);
+        view.               Init(1);
+        wetsuit.            Init(1);
+        weaponLv.           Init(1);
+        stamina.            Init(10f);
+        staminaRecovery.    Init(1f);
+        maxStamina.         Init(10f);
+        oxygen.             Init(10f);
+        oxygenRecovery.     Init(1f);
+        maxOxygen.          Init(10f);
+        health.             Init(3);
+        maxHealth.          Init(10);
     }
 }

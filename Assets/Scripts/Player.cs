@@ -2,9 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum eUINum
+{
+    LABAL,
+    BACK,
+    BAR,
+    TEXT,
+}
+
 public class Player : MonoBehaviour {
 
-	void Update () {
+    public pProperty property;
+
+    private void Awake()
+    {
+        property = new pProperty();
+
+        property.Init();
+    }
+
+    void Update () {
 		
 	}
 }

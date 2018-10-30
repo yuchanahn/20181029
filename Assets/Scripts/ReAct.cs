@@ -22,6 +22,15 @@ public class ReAct<T>
 
     public Action Event;
     public Action PrevEvent;
-
-
+    bool islock = false;
+    public void Init(T val)
+    {
+        if (islock) return;
+        
+        islock = true;
+        value = val;
+        Event = () => { };
+        PrevEvent = () => { };
+    }
+    
 }
