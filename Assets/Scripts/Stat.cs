@@ -9,7 +9,6 @@ public enum eStatUI
     currentMeter,
     maxMeter,
     acceleration,
-    maxAcceleration,
     diveTime,
     xSpeed,
     ySpeed,
@@ -42,10 +41,9 @@ public static class Stat
             d[(eStatUI)i] = new ReAct<float>();
             d[(eStatUI)i].Init(0);
         }
-        //arr[].Init(0);
+        //curMeter.Init(0);
         //maxMeter.Init(0);
         //acceleration.Init(.05f);
-        //maxAcceleration.Init(.5f);
         //diveTime.Init(10f);
         //xSpeed.Init(1);
         //ySpeed.Init(0f);

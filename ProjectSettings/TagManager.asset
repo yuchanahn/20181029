@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - background
+  - bgCol
+  - pCol
+  - Mob
   layers:
   - Default
   - TransparentFX

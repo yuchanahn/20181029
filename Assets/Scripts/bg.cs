@@ -2,29 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bg : MonoBehaviour
+public class BG : MonoBehaviour
 {
-    public BackgroundMgr bgmgr;
+    public BackgroundMgr mgr;
 
-    GameObject[] b = new GameObject[2];
+    public GameObject[] bgs;
+
+    private void Start()
+    {
+        bgs = new GameObject[mgr.bgCount];
+    }
+
+    private void Update()
+    {
+        transform.Translate(0, Stat.d[eStatUI.ySpeed].Value, 0);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "background")
+        if (collision.tag != "bgCol") { return; }
+
+        for (int i = 0; i < mgr.bgCount; i++)
+            bgs[i] = mgr.transform.GetChild(i).gameObject;
+        
+
+        for (int i = 0; i < bgs.Length - 1; i++)
         {
-            for (int i = 0; i < 2; i++)
-                b[i] = transform.GetChild(i).gameObject;
+            if (bgs[i] != gameObject) { continue; }
 
-            b[0].transform.SetParent(transform.parent);
-            b[1].transform.SetParent(b[0].transform);
-            transform.SetParent(b[0].transform);
-
-            Debug.Log("1 : " + transform.position.y + "2 : " + b[0].transform.position.y + "3 : " + b[1].transform.position.y);
-            bgmgr.bg = b[0];
-
-            b[0].transform.position = new Vector2(0, -5);
-            b[1].transform.position = new Vector2(0, -25);
-            transform.position = new Vector2(0, -45);
+            bgs[i + 1].transform.position = new Vector2(0, -5);
+            break;
         }
+
+        transform.position = new Vector2(0, 15 - (mgr.bgCount * 20));
     }
 }
