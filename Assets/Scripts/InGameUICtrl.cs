@@ -8,9 +8,13 @@ public class InGameUICtrl : MonoBehaviour
     public eStatUI curr;
     public eStatUI max;
 
+    [SerializeField] GameObject mGage;
+
     void Awake()
     {
         Stat.Init();
+        Stat.d[eStatUI.oxygen].Value = 1000;
+        Stat.d[eStatUI.maxOxygen].Value = 1000;
     }
 
     private void Start()
@@ -28,11 +32,14 @@ public class InGameUICtrl : MonoBehaviour
         }
     }
 
-
+    private void Update()
+    {
+    }
 
     void UpdateStat()
     {
-        transform.GetChild(3).GetComponent<Text>().text = Stat.d[curr].Value + "/" + Stat.d[max].Value;
+        transform.GetChild(3).GetComponent<Text>().text = (int)Stat.d[curr].Value + "/" + (int)Stat.d[max].Value;
+        mGage.transform.localScale = new Vector3(Stat.d[curr].Value / Stat.d[max].Value, 1,1);
     }
     void UpdateStat_noneMax()
     {
