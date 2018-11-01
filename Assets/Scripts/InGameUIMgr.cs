@@ -6,20 +6,9 @@ using UnityEngine.UI;
 
 public class InGameUIMgr : MonoBehaviour
 {
-    GameObject UImgr;
-    public Text[] UIText;
-
     void Start()
     {
-        UIText = GetComponentsInChildren<Text>();
+        Stat.d[eStatUI.maxHealth].Value = 10;
+        Stat.d[eStatUI.maxOxygen].Value = 150;
     }
-
-    private void Init()
-    {
-        Stat.d[eStatUI.oxygen].Event += ()=>
-        {
-            UIText[0].text = ""+1;
-        };
-    }
-
 }

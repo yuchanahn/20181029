@@ -13,8 +13,6 @@ public class InGameUICtrl : MonoBehaviour
     void Awake()
     {
         Stat.Init();
-        Stat.d[eStatUI.oxygen].Value = 1000;
-        Stat.d[eStatUI.maxOxygen].Value = 1000;
     }
 
     private void Start()
@@ -39,7 +37,10 @@ public class InGameUICtrl : MonoBehaviour
     void UpdateStat()
     {
         transform.GetChild(3).GetComponent<Text>().text = (int)Stat.d[curr].Value + "/" + (int)Stat.d[max].Value;
-        //mGage.transform.localScale = new Vector3(Stat.d[curr].Value / Stat.d[max].Value, 1,1);
+        if ((Stat.d[curr].Value != 0) && (Stat.d[max].Value != 0))
+        {
+            mGage.transform.localScale = new Vector3(Stat.d[curr].Value / Stat.d[max].Value, 1, 1);
+        }
     }
     void UpdateStat_noneMax()
     {
