@@ -7,7 +7,7 @@ public class yMove : MonoBehaviour {
     private void Update()
     {
         Player.Instance.ySpeed += 
-            Stat.d[eStatUI.yAcceleration].Value * Time.deltaTime;
+            Stat.d[eStat.yAcceleration].Value * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

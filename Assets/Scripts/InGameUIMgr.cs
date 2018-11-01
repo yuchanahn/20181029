@@ -8,7 +8,7 @@ public class InGameUIMgr : MonoBehaviour
 {
     void Start()
     {
-        Stat.d[eStatUI.maxHealth].Value = 10;
-        Stat.d[eStatUI.maxOxygen].Value = 150;
+        Stat.d[eStat.maxHealth].Value = 10;
+        Stat.d[eStat.maxOxygen].Value = 150;
     }
 }

@@ -6,10 +6,10 @@ public class xMove : MonoBehaviour
 {
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) { Stat.d[eStatUI.xSpeed].Value = -5; }
-        if(Input.GetKeyDown(KeyCode.D)) { Stat.d[eStatUI.xSpeed].Value =  5; }
+        if(Input.GetKeyDown(KeyCode.A)) { Stat.d[eStat.xSpeed].Value = -5; }
+        if(Input.GetKeyDown(KeyCode.D)) { Stat.d[eStat.xSpeed].Value =  5; }
 
-        Player.Instance.xPos += Stat.d[eStatUI.xSpeed].Value * Time.deltaTime;
+        Player.Instance.xPos += Stat.d[eStat.xSpeed].Value * Time.deltaTime;
 
         Player.Instance.transform.position 
             = new Vector2(Player.Instance.xPos, Player.Instance.transform.position.y);
@@ -19,6 +19,6 @@ public class xMove : MonoBehaviour
     {
         if (collision.tag != "pCol") { return; }
 
-        Stat.d[eStatUI.xSpeed].Value = 0;
+        Stat.d[eStat.xSpeed].Value = 0;
     }
 }

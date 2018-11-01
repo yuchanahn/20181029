@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum eStatUI
+public enum eStat
 {
     none,
     currentMeter,
@@ -26,6 +26,7 @@ public enum eStatUI
     maxOxygen,
     health,
     maxHealth,
+    money,
 
 
     last,
@@ -33,14 +34,13 @@ public enum eStatUI
 
 public static class Stat
 {
-    public static Dictionary<eStatUI, ReAct<float>> d = new Dictionary<eStatUI, ReAct<float>>();
+    public static Dictionary<eStat, ReAct<float>> d = new Dictionary<eStat, ReAct<float>>();
 
     public static void Init()
     {
-        for(var i = 0; i < (int)eStatUI.last; ++i)
+        for(var i = 0; i < (int)eStat.last; ++i)
         {
-            d[(eStatUI)i] = new ReAct<float>();
-            d[(eStatUI)i].Init(0);
+            d[(eStat)i] = new ReAct<float>();
         }
         //curMeter.Init(0);
         //maxMeter.Init(0);

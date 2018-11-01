@@ -5,32 +5,29 @@ using System;
 
 public class ReAct<T>
 {
-    T value;
+    T _value;
     public T Value
     {
         get
         {
-            return value;
+            return _value;
         }
         set
         {
             PrevEvent();
-            this.value = value;
+            _value = value;
             Event();
         }
     }
 
-    public Action Event;
-    public Action PrevEvent;
-    bool islock = false;
-    public void Init(T val)
+    public Action Event = () => { };
+    public Action PrevEvent = () => { };
+
+    public ReAct(T value)
     {
-        if (islock) return;
-        
-        islock = true;
-        value = val;
-        Event = () => { };
-        PrevEvent = () => { };
+        _value = value;
     }
-    
+    public ReAct()
+    {
+    }
 }

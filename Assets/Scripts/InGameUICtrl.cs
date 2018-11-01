@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class InGameUICtrl : MonoBehaviour
 {
-    public eStatUI curr;
-    public eStatUI max;
+    public eStat curr;
+    public eStat max;
 
     [SerializeField] GameObject mGage;
 
@@ -17,7 +17,7 @@ public class InGameUICtrl : MonoBehaviour
 
     private void Start()
     {
-        if (max != eStatUI.none)
+        if (max != eStat.none)
         {
             UpdateStat();
             Stat.d[curr].Event += UpdateStat;
