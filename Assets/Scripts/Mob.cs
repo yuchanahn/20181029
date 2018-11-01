@@ -7,7 +7,7 @@ public class Mob : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "player") { return; }
+        if (collision.tag != "Player") { return; }
         Stat.d[eStatUI.health].Value -= 1;
 
         Destroy(gameObject);

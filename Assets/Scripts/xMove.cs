@@ -4,58 +4,21 @@ using UnityEngine;
 
 public class xMove : MonoBehaviour
 {
-    public GameObject player;
-
-    public float speed;
-    private float X
-    {
-        get { return Stat.d[eStatUI.xSpeed].Value; }
-        set
-        {
-            if (-6 <= value && value <= 6)
-                Stat.d[eStatUI.xSpeed].Value = value;
-        }
-    }
-
-    public float direction;
-    public bool isStop = false;
-    private void Start()
-    {
-        direction = 0;
-        speed = 0;
-        X = 0;
-        isStop = false;
-
-        Stat.d[eStatUI.xSpeed].Event = () =>
-        {
-            if(isStop)
-                speed = 0;
-        };
-    }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            isStop = false;
-            speed = 5;
-            direction = -1;
-        }
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            isStop = false;
-            speed = 5;
-            direction = 1;
-        }
+        if(Input.GetKeyDown(KeyCode.A)) { Stat.d[eStatUI.xSpeed].Value = -5; }
+        if(Input.GetKeyDown(KeyCode.D)) { Stat.d[eStatUI.xSpeed].Value =  5; }
 
-        X += speed * Time.deltaTime * direction;
+        Player.Instance.xPos += Stat.d[eStatUI.xSpeed].Value * Time.deltaTime;
 
-        player.transform.position = new Vector2(X, transform.position.y);
+        Player.Instance.transform.position 
+            = new Vector2(Player.Instance.xPos, Player.Instance.transform.position.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "pCol") { return; }
 
-        isStop = true;
+        Stat.d[eStatUI.xSpeed].Value = 0;
     }
 }

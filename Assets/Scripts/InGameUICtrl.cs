@@ -39,7 +39,7 @@ public class InGameUICtrl : MonoBehaviour
     void UpdateStat()
     {
         transform.GetChild(3).GetComponent<Text>().text = (int)Stat.d[curr].Value + "/" + (int)Stat.d[max].Value;
-        mGage.transform.localScale = new Vector3(Stat.d[curr].Value / Stat.d[max].Value, 1,1);
+        //mGage.transform.localScale = new Vector3(Stat.d[curr].Value / Stat.d[max].Value, 1,1);
     }
     void UpdateStat_noneMax()
     {
