@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class xMove : MonoBehaviour
+public class xPos : MonoBehaviour
 {
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) { Stat.d[eStat.xSpeed].Value = -5; }
-        if(Input.GetKeyDown(KeyCode.D)) { Stat.d[eStat.xSpeed].Value =  5; }
+        if (Player.Instance.xPos < -6) Player.Instance.xPos = -6;
+        if (Player.Instance.xPos > 6) Player.Instance.xPos = 6;
 
         Player.Instance.xPos += Stat.d[eStat.xSpeed].Value * Time.deltaTime;
 

@@ -9,8 +9,8 @@ public enum eStat
     currentMeter,
     maxMeter,
     diveTime,
-    xSpeed,
     xPos,
+    xSpeed,
     ySpeed,
     maxYSpeed,
     yAcceleration,
@@ -27,7 +27,7 @@ public enum eStat
     health,
     maxHealth,
     money,
-
+    moneyPerMeter,
 
     last,
 }

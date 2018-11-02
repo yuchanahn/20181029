@@ -12,7 +12,7 @@ public class InGameUICtrl : MonoBehaviour
 
     void Awake()
     {
-        Stat.Init();
+        //Stat.Init();
     }
 
     private void Start()

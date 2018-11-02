@@ -30,41 +30,47 @@ public class Player : MonoBehaviour
         get { return Stat.d[eStat.ySpeed].Value; }
         set { Stat.d[eStat.ySpeed].Value = value; }
     }
+    public float health
+    {
+        get { return Stat.d[eStat.health].Value; }
+        set { Stat.d[eStat.health].Value = value; }
+    }
+
+    public bool IsDash = false;
 
     private void Start()
     {
-        xPos = 0;
-        Stat.d[eStat.xPos].Event += () =>
-        {
-            if (xPos < -6) xPos = -6;
-            if (xPos > 6) xPos = 6;
-        };
+        Init();    
+    }
 
+    public void Init()
+    {
+        xPos = 0;
         Stat.d[eStat.xSpeed].Value = 0;
 
         ySpeed = 0;
-        Stat.d[eStat.ySpeed].Event += () =>
-        {
-            if (ySpeed > Stat.d[eStat.maxYSpeed].Value)
-                ySpeed = Stat.d[eStat.maxYSpeed].Value;
-        };
-        Stat.d[eStat.maxYSpeed].Value = .5f;
-        Stat.d[eStat.yAcceleration].Value = .05f;
+        Stat.d[eStat.maxYSpeed].Value = 5f;
+        Stat.d[eStat.yAcceleration].Value = .5f;
 
         Stat.d[eStat.currentMeter].Value = 0;
 
+        Stat.d[eStat.stamina].Value = Stat.d[eStat.maxStamina].Value;
+        
         GameOverInit(eStat.temperature, 36.5f);
-        GameOverInit(eStat.stamina, 100f);
         GameOverInit(eStat.oxygen, 100f);
-        GameOverInit(eStat.health, 3f);
+        GameOverInit(eStat.health, 10f);
     }
+
 
     void GameOverInit(eStat state, float v)
     {
         Stat.d[state].Event += () =>
         {
             if (Stat.d[state].Value < 0)
+            {
+                Stat.d[state].Value = 0;
                 Debug.Log("GameOver");
+            }
         };
         Stat.d[state].Value = v;
     }

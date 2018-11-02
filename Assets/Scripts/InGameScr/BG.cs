@@ -6,7 +6,7 @@ public class BG : MonoBehaviour
 {
     private void Update()
     {
-        transform.Translate(0, Player.Instance.ySpeed, 0);
+        transform.Translate(0, Player.Instance.ySpeed / 10, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
