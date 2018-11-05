@@ -24,7 +24,7 @@ public class Anim : MonoBehaviour
 
     private void Start()
     {
-        pAnim = Player.Instance.GetComponent<Animator>();
+        pAnim = Player.Instance.transform.parent.GetComponent<Animator>();
     }
 
     public void DashOn()

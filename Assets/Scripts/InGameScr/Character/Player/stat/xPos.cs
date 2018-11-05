@@ -19,6 +19,7 @@ public class xPos : MonoBehaviour
     {
         if (collision.tag != "pCol") { return; }
 
+        Debug.Log("a");
         Stat.d[eStat.xSpeed].Value = 0;
     }
 }
