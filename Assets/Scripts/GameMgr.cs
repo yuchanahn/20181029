@@ -21,5 +21,13 @@ public class GameMgr : MonoBehaviour
         Stat.d[eStat.maxHealth].Value = 0;
         Stat.d[eStat.maxOxygen].Value = 0;
         Stat.d[eStat.yAcceleration].Value = 0;
+
+
+        /// save /// 
+
+        Stat.d[eStat.SHOP_Wetsuit_INDEX].Value = 1;
+        Stat.d[eStat.SHOP_weaponLv_INDEX].Value = 1;
+
+
     }
 }

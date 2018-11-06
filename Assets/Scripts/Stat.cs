@@ -28,6 +28,10 @@ public enum eStat
     maxHealth,
     money,
     moneyPerMeter,
+    SHOP_Wetsuit_INDEX,
+    SHOP_weaponLv_INDEX,
+    SHOP_Wetsuit_INDEXMAX,
+    SHOP_weaponLv_INDEXMAX,
 
     last,
 }
