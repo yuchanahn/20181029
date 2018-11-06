@@ -82,6 +82,8 @@
     <Compile Include="Assets\Scripts\MainSceneScr\ShopManager.cs" />
     <Compile Include="Assets\Scripts\ReAct.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
+    <Compile Include="Assets\ShopPointStat.cs" />
+    <Compile Include="Assets\ShopTabManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ahn yu chan/Desktop/git/20181029game/20181029/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

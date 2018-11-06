@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DB : MonoBehaviour {
+
+    [SerializeField] eStat[] data;
+
     public void Save()
     {
-        //PlayerPrefs.SetFloat();
+        foreach (var i in data)
+        {
+            PlayerPrefs.SetFloat(i.ToString(),Stat.d[i].Value);
+        }
     }
 
     public void load()
     {
-        //PlayerPrefs.GetFloat();
+        foreach (var i in data)
+        {
+            PlayerPrefs.GetFloat(i.ToString(), Stat.d[i].Value);
+        }
     }
 
 }

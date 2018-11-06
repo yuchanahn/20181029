@@ -4,54 +4,30 @@ using UnityEngine.UI;
 using System;
 
 public class Shop : MonoBehaviour {
+    public Vector2 startPos;
+    [SerializeField] Text mname;
+    [SerializeField] Text price;
 
-    [SerializeField] eStat item;
-    [SerializeField] float AddRate;
-    [SerializeField] float PriceAddRate;
-
-    [SerializeField] Text lv;
-    [SerializeField] Text value;
-    [SerializeField] Text pri;
+    public ReAct<Item> item = new ReAct<Item>();
 
 
-    public int _Price;
-    public float _value = 1;
 
-    ReAct<int> LV = new ReAct<int>(1);
-
-
-    private void Start()
+    public void init()
     {
-        UpdateText();
-        LV.Event += () => 
+        item.Event += () =>
         {
-            _Price += (int)(_Price * PriceAddRate);
-            int addValue = (int)(_value * AddRate);
-
-            _value += addValue;
-            Stat.d[item].Value += addValue;
-            UpdateText();
+            mname.text = item.Value.name;
+            price.text = item.Value.price.ToString();
         };
     }
-
-    void UpdateText()
+    private void Start()
     {
-        value.text = _value.ToString();
-        lv.text = LV.Value.ToString();
-        pri.text = _Price.ToString();
+        GetComponent<RectTransform>().localPosition = startPos;
     }
 
-    public void GetItem()
+    public void ShowPoint(bool b)
     {
-        if(_Price <= Stat.d[eStat.money].Value)
-        {
-            Stat.d[eStat.money].Value -= _Price;
-            ++LV.Value;
-        }
-        else
-        {
-            pri.color = Color.red;
-            DelayAct.DAct(()=> { pri.color = Color.black; },0.5f);
-        }
+        ShopPointStat.instance.gameObject.SetActive(b);
+        ShopPointStat.Set(gameObject);
     }
 }
