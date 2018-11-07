@@ -60,8 +60,10 @@ public class ShopManager : MonoBehaviour
     {
         foreach(var i in ALLItemSlot[mstat])
         {
-            if(DB.equipItems[mstat] != -1)
-            i.Equipment(DB.equipItems[mstat],false);
+            if ((DB.equipItems[mstat] != -1) && (shop.mslotNumber != DB.equipItems[mstat]))
+            {
+                i.Equipment(DB.equipItems[mstat], false);
+            }
         }
         DB.equipItems[mstat] = shop.mslotNumber;
     }

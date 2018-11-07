@@ -52,7 +52,7 @@ public class Shop : MonoBehaviour {
     {
         if(mslotNumber == SlotNum)
         {
-            Equip = b;
+            Equip = !b;
             Equipment();
         }
     }
