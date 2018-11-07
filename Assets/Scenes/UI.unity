@@ -876,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 423667812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.030000001, y: 0.10162601, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1388334306}
   m_RootOrder: 0
@@ -1105,7 +1105,7 @@ Transform:
   m_GameObject: {fileID: 459644991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -25, z: 0}
-  m_LocalScale: {x: 300, y: 147.6, z: 1}
+  m_LocalScale: {x: 500, y: 147.6, z: 1}
   m_Children: []
   m_Father: {fileID: 936529495}
   m_RootOrder: 1
@@ -2123,7 +2123,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2178,7 +2178,7 @@ Transform:
   m_GameObject: {fileID: 914113619}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -45, z: 0}
-  m_LocalScale: {x: 300, y: 147.6, z: 1}
+  m_LocalScale: {x: 500, y: 147.6, z: 1}
   m_Children: []
   m_Father: {fileID: 936529495}
   m_RootOrder: 2
@@ -2916,7 +2916,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f714b32d2b8c1654fa70ff44768789c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -3392,7 +3392,7 @@ Transform:
   m_GameObject: {fileID: 1388334304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5, z: 0}
-  m_LocalScale: {x: 300, y: 147.6, z: 1}
+  m_LocalScale: {x: 500, y: 147.6, z: 1}
   m_Children:
   - {fileID: 423667813}
   m_Father: {fileID: 936529495}
