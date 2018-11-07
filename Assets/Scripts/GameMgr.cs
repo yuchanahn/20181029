@@ -14,7 +14,7 @@ public class GameMgr : MonoBehaviour
         Stat.d[eStat.moneyPerMeter].Value = 10;
         Stat.d[eStat.maxStamina].Value = 100;
         Stat.d[eStat.staminaRecovery].Value = 1;
-        Stat.d[eStat.view].Value = 0;
+        Stat.d[eStat.view].Value = Camera.main.orthographicSize;
         Stat.d[eStat.diveTime].Value = 0;
         Stat.d[eStat.temperature].Value = 0;
         Stat.d[eStat.weaponLv].Value = 0;

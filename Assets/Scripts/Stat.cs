@@ -45,6 +45,8 @@ public static class Stat
         for(var i = 0; i < (int)eStat.last; ++i)
         {
             d[(eStat)i] = new ReAct<float>();
+            DB.IItems[(eStat)i] = new List<int>();
+            DB.equipItems[(eStat)i] = -1;
         }
         //curMeter.Init(0);
         //maxMeter.Init(0);
