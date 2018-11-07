@@ -27,6 +27,7 @@ public class GameMgr : MonoBehaviour
 
         Stat.d[eStat.SHOP_Wetsuit_INDEX].Value = 1;
         Stat.d[eStat.SHOP_weaponLv_INDEX].Value = 1;
+        Stat.d[eStat.money].Value = 1000;
 
 
     }

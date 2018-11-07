@@ -32,7 +32,6 @@ public class ShopManager : MonoBehaviour
     Dictionary<eStat, List<Shop>> ALLItemSlot = new Dictionary<eStat, List<Shop>>();
     void Start()
     {
-        Stat.d[eStat.money].Value = 1000;
         SetRect(wetsuits, wetsuitTab.transform);
         SetRect(weapons, weaponTab.transform);
         Stat.d[eStat.SHOP_Wetsuit_INDEXMAX].Value = wetsuits.Length;
