@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Stamina : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
-
         Stat.d[eStat.stamina].Event += () =>
         {
             // Dash
@@ -22,7 +21,7 @@ public class Stamina : MonoBehaviour
     }
     
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(!Player.Instance.IsDash)
         {

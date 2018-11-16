@@ -21,42 +21,33 @@ public class InputKey : MonoBehaviour
     #endregion
 
     float dashcool = 0;
+
+    public Player player;
+    public xSpeed xSpeedInput;
+    public ySpeed ySpeedInput;
+    public WeaponLv WeapInput;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        xSpeedInput = player.stMgr.GetComponent<xSpeed>();
+        ySpeedInput = player.stMgr.GetComponent<ySpeed>();
+        WeapInput = player.stMgr.GetComponent<WeaponLv>();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) { Stat.d[eStat.xSpeed].Value = -5; }
-        if (Input.GetKeyDown(KeyCode.D)) { Stat.d[eStat.xSpeed].Value = 5; }
+        //Move
+        if (Input.GetKeyDown(KeyCode.A)) { xSpeedInput.Left(); }
+        if (Input.GetKeyDown(KeyCode.D)) { xSpeedInput.Right(); }
 
-        if (!Player.Instance.IsDash) dashcool += Time.deltaTime;
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (dashcool > 1)
-            {
-                if (Stat.d[eStat.stamina].Value > 10)
-                {
-                    dashcool = 0;
-                    Player.Instance.IsDash = true;
+        // Dash
+        if (Input.GetKeyDown(KeyCode.Space)) { ySpeedInput.DashOn(); }
+        if (Input.GetKey(KeyCode.Space)) { ySpeedInput.Dash(); }
+        if (Input.GetKeyUp(KeyCode.Space) || Stat.d[eStat.stamina].Value < 0) { ySpeedInput.DashOff(); }
 
-                    Player.Instance.ySpeed += Player.Instance.ySpeed;
-                    Stat.d[eStat.maxYSpeed].Value += Stat.d[eStat.maxYSpeed].Value;
-                    Stat.d[eStat.yAcceleration].Value += Stat.d[eStat.yAcceleration].Value;
-                }
-            }
-        }
-
-        if (Player.Instance.IsDash && Input.GetKey(KeyCode.Space))
-        {
-            Stat.d[eStat.stamina].Value -= 10 * Time.deltaTime;
-        }
-
-        if ((Input.GetKeyUp(KeyCode.Space) || Stat.d[eStat.stamina].Value < 0) && Player.Instance.IsDash)
-        {
-            dashcool = 0;
-            Player.Instance.IsDash = false;
-
-            Player.Instance.ySpeed -= Player.Instance.ySpeed / 2;
-            Stat.d[eStat.maxYSpeed].Value -= Stat.d[eStat.maxYSpeed].Value / 2;
-            Stat.d[eStat.yAcceleration].Value -= Stat.d[eStat.yAcceleration].Value / 2;
-        }
+        // Click
+        if (Input.GetMouseButtonDown(0)) { WeapInput.MobCollide(); }
     }
 }

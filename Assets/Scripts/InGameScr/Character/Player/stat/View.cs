@@ -8,7 +8,7 @@ public class View : MonoBehaviour
     Camera cam;
     const int defaultCameraY = 5;
     Vector3 pos;
-    void Start()
+    private void Start()
     {
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
 
@@ -17,10 +17,8 @@ public class View : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-
         CameraUpdate();
     }
 

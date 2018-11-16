@@ -8,6 +8,7 @@ public class GameMgr : MonoBehaviour
     {
         Stat.Init();
     }
+
     void Start()
     {
         Stat.d[eStat.maxMeter].Value = 1000;

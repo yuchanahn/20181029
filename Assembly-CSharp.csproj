@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\GameMgr.cs" />
     <Compile Include="Assets\Scripts\InGameScr\BackgroundMgr.cs" />
     <Compile Include="Assets\Scripts\InGameScr\BG.cs" />
+    <Compile Include="Assets\Scripts\InGameScr\Character\Fish\Spawn.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Mob.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\Anim.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\InputKey.cs" />
@@ -74,8 +75,10 @@
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\Meter.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\Stamina.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\View.cs" />
+    <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\WeaponLv.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\WetSuit.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\xPos.cs" />
+    <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\xSpeed.cs" />
     <Compile Include="Assets\Scripts\InGameScr\Character\Player\stat\ySpeed.cs" />
     <Compile Include="Assets\Scripts\InGameScr\UI\InGameUICtrl.cs" />
     <Compile Include="Assets\Scripts\InGameScr\UI\InGameUIMgr.cs" />
@@ -87,16 +90,16 @@
     <Compile Include="Assets\Scripts\ReAct.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/anyc1/OneDrive/바탕 화면/myGit/20181029/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/Desktop/git/20181029game/20181029/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/anyc1/OneDrive/바탕 화면/myGit/20181029/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/Desktop/git/20181029game/20181029/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/anyc1/OneDrive/바탕 화면/myGit/20181029/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/Desktop/git/20181029game/20181029/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/anyc1/OneDrive/바탕 화면/myGit/20181029/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/Desktop/git/20181029game/20181029/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -297,10 +300,10 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.6f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/anyc1/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/anyc1/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ahn yu chan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

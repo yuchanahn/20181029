@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public void Awake()
     {
         _instance = this;
+        stMgr = transform.GetChild(0).gameObject;
     }
     #endregion
 
@@ -36,14 +37,16 @@ public class Player : MonoBehaviour
         set { Stat.d[eStat.health].Value = value; }
     }
 
+    public GameObject stMgr;
+
     public bool IsDash = false;
 
     private void Start()
     {
-        Init();    
+        Init();
     }
 
-    public void Init()
+    private void Init()
     {
         xPos = 0;
         Stat.d[eStat.xSpeed].Value = 0;
@@ -59,10 +62,10 @@ public class Player : MonoBehaviour
         GameOverInit(eStat.temperature, 36.5f);
         GameOverInit(eStat.oxygen, 100f);
         GameOverInit(eStat.health, 10f);
+
     }
-
-
-    void GameOverInit(eStat state, float v)
+    
+    private void GameOverInit(eStat state, float v)
     {
         Stat.d[state].Event += () =>
         {

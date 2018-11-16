@@ -6,7 +6,7 @@ public class Meter : MonoBehaviour
 {
     int prevMeter = 10;
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Stat.d[eStat.currentMeter].Value += Player.Instance.ySpeed / 10 * Time.deltaTime;
 

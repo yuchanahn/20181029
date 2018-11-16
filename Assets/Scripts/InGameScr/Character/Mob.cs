@@ -12,4 +12,5 @@ public class Mob : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }
